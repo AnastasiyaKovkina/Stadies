@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_game</title>
+</head>
+<body>
+    <!-- <script> first variant
+        alert('Привет! Ну что, сыграем в игру?!');
+        alert("Суть игры заключается в том, что вам нужно в предложенном слове поменять буквы таким образом, чтобы получилось новое слово. Начнем!");
+        var ans1 = 'банка';
+        var ans2 = 'камыш';
+        var ans3 = 'кулак';
+        var ans4 = 'приказ';
+        var ans5 = 'шнурок';
+        var ans6 = 'соринка';
+        var userAnswer = '';
+        var attempt = 0;
+        var attemptsLimit = 3;
+        // *******************************************************************************************************
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt('"КАБАН"');
+            // if (userAnswer = '' || userAnswer == null){
+            //     alert('Видимо вы передумали играть. ну что ж, тогда до свидания!');
+            //     break;
+            // }
+             if (userAnswer == ans1){
+                alert('Это правильный ответ! Отличное начало! Продолжим!');
+                break;
+            }
+            
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+        //********************************************************************************************
+        alert('А теперь следующее слово!');
+        var attempt = 0;
+        //var userAnswer1 = '';
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt("МЫШКА");
+            if (userAnswer == ans2){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+        //************************************************************************************************************************
+        alert('И еще одно слово!');
+        var attempt = 0;
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt("КУКЛА");
+            if (userAnswer == ans3){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+        //********************************************************************************************************************
+        alert('И еще одно слово!');
+        var attempt = 0;
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt("КАПРИЗ");
+            if (userAnswer == ans4){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+        //***********************************************************************************************************************
+        alert('Новое слово:');
+        attempt = 0;
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt("КОРШУН");
+            if (userAnswer == ans5){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+        //*****************************************************************************************************************************
+        alert('И пследнее...');
+        attempt = 0;
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt("РОСИНКА");
+            if (userAnswer == ans6){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break;
+            }
+            else {
+                alert('Это неправильный ответ, но ты можешт попробовать еще.');
+            }
+        }
+
+
+
+    </script> -->
+    <script> // two mass
+    var question = ['кабан','мышка','кукла','каприз','коршун','росинка'];
+    var answer = ['банка','камыш','кулак','приказ','шнурок','соринка'];
+    // var question = ['кабан','мышка'];
+    // var answer = ['банка','камыш'];
+    var userAnswer = '';
+        var attempt = 0;
+        var attemptsLimit = 3;
+        alert('Привет! Ну что, сыграем в игру?!');
+        alert("Суть игры заключается в том, что вам нужно в предложенном слове поменять буквы таким образом, чтобы получилось новое слово. Начнем!");
+        all:
+    for (var i = 0; i < question.length; i++) {
+        userAnswer = prompt(question[i]);
+        if (userAnswer == '' || userAnswer == null) {//нет ответа
+            alert('Видимо вы передумали играть. ну что ж, тогда до свидания!');
+            break;
+           }
+       if (userAnswer == answer[i]) {//правильный ответ
+            alert('Это правильный ответ!');
+            if (i == question.length - 1) {
+            alert('Отличная игра! Ты молодец!');
+            break;
+           }
+       }
+        if (userAnswer != answer[i]) {
+            alert('Это не правильный ответ!'); 
+            
+            attempt = 0;
+        while (attempt < attemptsLimit) {
+            attempt++;
+            userAnswer = prompt(question[i]);
+            if (userAnswer == answer[i]){
+                alert('Это правильный ответ! Продолжим!');
+                break;
+            }
+            // else if (userAnswer != answer[i]){
+            //     alert('Это не правильный ответ!');
+            // }
+            else if (attempt == attemptsLimit){
+                alert('Ну...ты пытался!');
+                break all;
+            }
+             else if (userAnswer != answer[i]){
+                alert('Это не правильный ответ!');
+            }
+        }
+    }
+}
+    </script>
+</body>
+</html>
