@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/basket.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mobile_menu container">
+                <ul class="mobile_menu_header">
+                     <li><button class="burger_button"><img src="./img/burger.png" alt="burger"></button></li>
+                     <li><a href=""><img class="mobile_logo" src="./img/logo.svg" alt="logo"></a></li>
+                     <li><a href="./basket.html"><button class="burger_button"><img class="" src="./img/basket.svg" alt="basket"></button></a></li>
+                </ul>
+                <ul class="mobile_menu_list">
+                 <li><a href="">Готовые наборы</a></li>
+                 <li><a href="">Собрать свой набор</a></li>
+                 <li><a href="./catalog.html">Каталог десертов </a></li>
+                     <li><a href="">Корпоративные подарки</a></li>
+                     <li><a href="">Свадебные предложения</a></li>
+                     <li><a href="">Гарантии вкуса и свежести</a></li>
+                     <li><a href="">Доставка и оплата</a></li>
+                     <li><a href="">Контакты</a></li>
+                     <li><a href=""><img src="./img/instagram.svg" alt="instagram"></a><a href=""><img src="./img/facebook.svg" alt="facebook"></a></li>
+                </ul>
+           </div>
+           <div class="wraper">
+            <div class="first_menu">
+                <div class="first_menu container">
+                  <div class="header_wrap">
+                        <ul class="header-flex">
+                            <li><a href="">Свадебные предложения</a></li>
+                            <li><a href="">Гарантии вкуса и свежести</a></li>
+                            <li><a href="">Доставка и оплата</a></li>
+                            <li><a href="">Контакты</a></li>
+                            <li><a href=""><img src="./img/phone.svg" alt="phone"> 095-95-95-959</a></li>
+                            <!-- <li></li> -->
+                            <li><a href="./basket.html"><img src="./img/basket.svg" alt="basket"> Корзина</a></li>  <!--отображение количества товара-->
+                            <li><a href=""><img src="./img/instagram.svg" alt="instagram"></a><a href=""><img src="./img/facebook.svg" alt="facebook"></a></li>
+                        </ul>
+                  </div>
+                </div>
+            </div>
+            <div class="second_menu">
+                <div class="second_menu container flex">
+                   <div class="header_wrap">
+                        <ul class="header-flex"> 
+                            <li><a href="">Готовые наборы</a></li>
+                            <li><a href="">Собрать свой набор</a></li>
+                            <li><a href="">Акции <img src="./img/stock.svg" alt=""></a></li>
+                        </ul>
+                   </div>
+                    <a class="logo" href="index.html"><img src="./img/logo.svg" alt="logo"></a>
+                   <div class="header_wrap">
+                        <ul class="header-flex">
+                            <li><a href="./catalog.html">Каталог десертов </a></li>
+                            <li><a href="">Корпоративные подарки</a></li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+           </div>          
+        </nav>
+    </header>
+<!-- BASKET**************************************************************************************************************************** -->
+<div class="busket_title">
+    <p><a href="./index.html"><span>Главная</span></a> > Корзина</p>
+    <h1>Ваша корзина</h1>
+</div>
+<div class="basket_content container">
+    <div class="basket ">
+       
+        <div class="basket_box">
+           <!-- <div class="basket_item">
+                <div class="del_btn">
+                    <button  value="del" data-id=""><img src="./img/del.png" alt="delet button">
+                    </div>
+             <div class="basket_wrap">
+                  <div class="prod_img">
+                      <img src="./img/catalog_img/catalog/sets/macarons-1.png" alt="macarons">
+                  </div>
+                  <div class="prod_title">
+                      <h3>title</h3>
+                      
+                  </div>
+                    <ul class="count flex">
+                        <li><button class="minus"><img src="./img/minus.png" alt=""></button></li>
+                        <li class="number">0</li>
+                        <li><button class="plus"><img src="./img/plus.png" alt=""></button></li>
+                    </ul>
+                    <div>
+                        <p>Стоимость: <span class="price"></span> грн.</p>
+                    </div>
+                    <p class="cost">Цена: <span></span> грн.</p>
+             </div>
+             
+           </div> -->
+         
+         
+    
+         </div>
+        </div>
+    
+       <div class="check container">
+            <div class="check_box">
+               <div class="check_wrap">
+                <h3>Итого</h3>
+                    <ul>
+                        <li>Стоимость товаров</li>
+                        <li ><span class="summ_cost"></span> грн.</li>
+                    </ul>
+                    <ul>
+                        <li>Доставка</li>
+                        <li><span class="delivery">100</span> грн.</li>
+                    </ul>
+                    <ul>
+                        <li>К орлате</li>
+                        <li><span class="to_pay"></span> грн.</li>
+                    </ul>
+                    <button class="order_btn">Оформить заказ</button>
+               </div>
+            </div>
+       </div>
+</div>
+<!-- FOOTER******************************************************************************************************************* -->
+<div class="footer">
+    <div class="footer container flex">
+      <div class="footer_item">
+         <div class="footer_item flex">
+              <ul>
+                  <li><img src="./img/hart.png" alt="hart"></li>
+                  <li>Готовим вручную и с любовью</li>
+              </ul>
+              <ul>
+                  <li><img src="./img/car.png" alt="car"></li>
+                  <li>Доставим в день заказа</li>
+              </ul>
+              <ul>
+                  <li><img src="./img/flour.png" alt="flour"></li>
+                  <li>100% натуральные ингредиенты</li>
+              </ul>
+         </div>
+         <p>© 2021 Макароншоп Киев,  улица Строителей, дом 22</p>
+      </div>
+      <div class="footer_item">
+          <ul>
+              <li><h3>ИНФОРМАЦИЯ</h3></li>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Гарантии вкуса и свежести</a></li>
+              <li><a href="">Доставка и оплата</a></li>
+              <li><a href="">Контакты</a></li>
+          </ul>
+      </div>
+      <div class="footer_item">
+          <ul>
+              <li><h3>КАТАЛОГ</h3></li>
+              <li><a href="">Каталог десертов</a></li>
+              <li><a a href="">Готовые наборы</a></li>
+              <li><a href="">Собрать свой набор</a></li>
+              <li><a href="">Акции</a></li>
+          </ul>
+      </div>
+      <div class="footer_item">
+          <ul>
+              <li><h3>ДЛЯ БИЗНЕСА</h3></li>
+              <li><a href="">Корпоративные подарки</a></li>
+              <li><a href="">Для юридических лиц</a></li>
+              <li><a href="">Оповикам</a></li>
+          </ul>
+      </div>
+      <div class="footer_item">
+          <h3>095-00-00-000</h3>
+          <p>с 9:00 до 21:00</p>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+</div>
+<script src="./script/jquery-3.6.0.slim.min.js"></script>
+<script src="./script/data.js"></script>
+<!-- <script src="./catalog.js"></script> -->
+<script src="./script/basket.js"></script>
+</body>
+</html>
