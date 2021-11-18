@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="./secret-key.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="javascript:void(0);">
+    rover name: <input id="rover-name" type="text" name="rover">
+    <input id="num" type="number" name="num">
+    <button id="ajax_btn">Submit</button>
+</form>
+<p>curiosity opportunity spirit</p>
+<hr>
+<div id="result"></div>
+<img src="" alt="">
+
+
+
+<script>
+    const num = document.getElementById('num');
+    const result = document.getElementById('result');
+    const ajax_btn = document.getElementById('ajax_btn');
+    const roverName = document.getElementById('rover-name');
+
+    const secretKey = getApiKey();
+    const api = '// https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY';
+
+
+    function getPhoto() {
+        // roverName.value;
+        // console.log(roverName.value);
+
+        const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName.value}/photos?sol=1000&api_key=${secretKey}`;
+        // console.log(url);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',url);
+        xhr.send();
+
+        if (xhr.readyState < 4) {
+            const preload = '<img src="./img/preloader.gif" alt="">';
+            result.innerHTML = preload;
+        }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200){
+                // console.log(xhr.responseText);
+                const data = JSON.parse(xhr.responseText);
+                // console.log(data);
+
+                // if (xhr.status == 400) {
+                //     result.innerText = 'There is no rover with that name! use Google...';
+                // }
+                    renderPhoto(data);
+
+
+
+            }
+
+            function renderPhoto(data) {
+                console.log(data);
+               
+                    
+               
+                result.innerHTML = `
+                <div class="item">
+                    <h3>${data.photos[num.value].rover.name}</h3>
+
+                    </div>
+                    <ul>
+                        <li><img src="${data.photos[num.value].img_src}" alt="" width="500px"></li>
+                        <hr>
+                        <li>Земное время: ${data.photos[num.value].earth_date}</li>
+                        <li>Камера: ${data.photos[num.value].camera.name}</li>
+                        <li>Дата старта: ${data.photos[num.value].rover.launch_date}</li>
+                        <li>Дата посадки: ${data.photos[num.value].rover.landing_date}</li>
+                        <li>Статус: ${data.photos[num.value].rover.status}</li>
+                    </ul>
+                `;
+            
+            }
+        }
+    }
+    ajax_btn.addEventListener('click', getPhoto);
+</script>
+</body>
+</html>
