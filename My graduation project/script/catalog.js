@@ -67,17 +67,35 @@ $(document).ready(function() {
 // добавление товара в корзину
 
 
-const addBtn = document.querySelectorAll('.add_item');
- 
-let prod = [];
+let addBtn = document.querySelectorAll('.add_item');
+
+let prod = [];//
+let oldBasket = JSON.parse(localStorage.getItem('basket')) || [];
+
+
 for (let i = 0; i < addBtn.length; i++) {
     addBtn[i].onclick = function () {
-        prod.push(prodacts[i]);//при нажатии на кнопку добавляем товар в массив
-        localStorage.setItem('basket', JSON.stringify(prod));//и добаляем массив в storage
+        console.log('click!');
 
+        let cuentBasketId = prodacts[i]["id"];
+        console.log(cuentBasketId);
+        oldBasket.push(prodacts[i]);
 
+        if (oldBasket[i].hasOwnProperty(cuentBasketId)) {
+            // oldBasket.pop(prodacts[i]);
+            console.log('true');
+        }else{
+            console.log('false');
+        }
+        
+        localStorage.setItem('basket', JSON.stringify(oldBasket));//и добаляем массив в storage
+     
     }
 }
+
+
+
+
 
 
 
